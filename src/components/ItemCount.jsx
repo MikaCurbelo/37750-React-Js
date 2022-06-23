@@ -26,20 +26,20 @@ useEffect(() => {
   return (
     <div >
        
-        <div 
-        disabled ={auxClases >= maxClases} onClick={()=> agregar() }  
-        style={{border: "Solid 2px green", width: "110px"}}>Agregar</div>
+        <button 
+        disabled ={auxClases >= 5} onClick={()=> agregar() }  
+        style={{border: "Solid 2px green", width: "110px"}}>Agregar</button>
        
-       <div 
-       style={{border: "none 2px green", width: "100px"}}>{auxClases}</div>
+       <div>{auxClases}</div>
        
-       <div
+       <button
+       disabled ={auxClases <= 1}
        onClick={()=> quitar() }
-       style={{border: "Solid 2px red", width: "110px"}}>Quitar</div>
+       style={{border: "Solid 2px red", width: "110px"}}>Quitar</button>
 
-       <div
+       <button
        onClick={()=> onAdd() } 
-       style={{border: "Solid 2px violet", width: "110px"}}>Comprar</div>
+       style={{border: "Solid 2px violet", width: "110px"}}>Comprar</button>
     
     
     </div>
