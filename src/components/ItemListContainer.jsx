@@ -13,8 +13,10 @@ export default function ItemListContainer({cartelBienvenida}) {
     <h2 className='fontGreeting colorGreeting'>{cartelBienvenida}</h2>
    <div style={{marginRight:"0"}}>
     <ItemCount 
+    
     maxClases = {maxClases}
     onAdd = {onAdd}
     clases={clases}/></div>
+    
   </div>
 }

@@ -15,6 +15,7 @@ useEffect(() => {
 
     function agregar() {
         setAuxClases (auxClases + 1);
+    
     }
 
     function quitar(){
@@ -26,14 +27,14 @@ useEffect(() => {
     <div >
        
         <div 
-        onClick={()=> agregar() } 
+        disabled ={auxClases >= maxClases} onClick={()=> agregar() }  
         style={{border: "Solid 2px green", width: "110px"}}>Agregar</div>
        
        <div 
        style={{border: "none 2px green", width: "100px"}}>{auxClases}</div>
        
        <div
-       onClick={()=> quitar() } 
+       onClick={()=> quitar() }
        style={{border: "Solid 2px red", width: "110px"}}>Quitar</div>
 
        <div
