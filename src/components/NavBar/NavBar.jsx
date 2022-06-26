@@ -1,15 +1,17 @@
 import React from 'react'
 import './NavBar.css'
-import CartWidget from '../CartWidget'
-
+import CartWidget from './CartWidget'
+import { GiMusicalNotes } from "react-icons/gi";
 
 
 
 export const NavBar = () => {
   return (
     <div>
-      <span className="logo fontColorNav backNav">
+      <span className="logo fontColorNav backNav icono">
+        <GiMusicalNotes/>
        <h1>CLASES DE MÚSICA</h1>
+       <GiMusicalNotes/>
       </span>
     <nav className="navbar navbar-expand-lg navbar-light backNav">
   <div className="container-fluid">

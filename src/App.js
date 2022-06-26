@@ -1,24 +1,30 @@
+// @ts-check
 import React from 'react';
 import './App.css';
 // import Item from './components/Item'
 // import ItemList from './components/ItemList';
-import ItemListContainer from './components/ItemListContainer';
 import './components/NavBar/NavBar'
 import { NavBar } from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemCount from './components/ItemCount/ItemCount';
+
+
+
 
 function App() {
+
+const onAdd = () =>{
   
+}
  
 
 
   return (
-    <div className="App">
+  <>
 <NavBar/>
-<ItemListContainer 
-cartelBienvenida="Bienvenido! Comienza tus clases ya!!"/>
-{/* <Item/> */}
-{/* <ItemList/> */}
-    </div>
+<ItemListContainer cartelBienvenida={"Consigue tus cursos ya"}/>
+<ItemCount stock={5} initial={1} onAdd={onAdd}/>
+</>
   );
 }
 
