@@ -14,7 +14,7 @@ const [loading, setLoading] = useState(true)
 useEffect(() => {
     getArray(array)
         .then(res => {
-            const item = res.find((item)=> item.id === 2)
+            const item = res.find((item)=> item.id === 3)
             setProduct(item)
         })
         .catch((err)=>console.log(err))
