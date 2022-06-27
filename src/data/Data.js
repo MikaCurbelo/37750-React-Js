@@ -1,0 +1,17 @@
+export const array = [
+    {id: 1, 
+        nombre:"Piano", 
+        precio: 1500, 
+        descripcion: "Curso de piano para nivel básico",
+        imgUrl: "img/piano.webp"},
+    {id: 2, 
+        nombre:"Batería", 
+        precio: 2500,
+        descripcion: "Curso de bateria para nivel básico, intemredio y avanzado",
+        imgUrl: "img/bateria.webp"},
+    {id: 3, 
+        nombre:"Guitarra", 
+        precio: 2000,
+        descripcion: "Curso de guitarra para nivel básico e intermedio",
+        imgUrl: "img/guitarra.webp"},
+]

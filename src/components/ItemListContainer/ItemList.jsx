@@ -1,15 +1,17 @@
+/* eslint-disable array-callback-return */
 import React from 'react'
+import {Item} from './Item' 
 
-export default function ItemList({productos}) {
+export const ItemList =({items}) => {
   return (
-    <div>
-      {productos.map((producto) => (
-        <div key={producto.id}>
-          Id {producto.id}, 
-          curso {producto.nombre}, 
-          precio {producto.precio} </div> 
-          ))} 
-      </div>
-  );
+    <>
+      {
+        items.map((item)=> {
+          return <Item key={item.id} {...item} />
+        })
+      }
+    </>
+  )
 }
+
 
