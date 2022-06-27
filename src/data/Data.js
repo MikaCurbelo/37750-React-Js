@@ -7,7 +7,7 @@ export const array = [
     {id: 2, 
         nombre:"Batería", 
         precio: 2500,
-        descripcion: "Curso de bateria para nivel básico, intemredio y avanzado",
+        descripcion: "Curso de batería para nivel básico, intemredio y avanzado",
         imgUrl: "img/bateria.webp"},
     {id: 3, 
         nombre:"Guitarra", 
