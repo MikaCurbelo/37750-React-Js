@@ -9,7 +9,7 @@ import {getArray} from '../helper/getArray'
 import {array} from '../../data/Data'
 import {ItemList} from './ItemList'
 import "./ItemListContainer.scss"
-
+import { useParams } from "react-router-dom"
 
 
 
@@ -19,14 +19,21 @@ export default function ItemListContainer() {
  
 const [products, setProducts] = useState([])
 const [loading, setLoading] = useState(true)
+const {categoryId} = useParams()
  
+
 useEffect(() => {
     getArray(array)
-    .then(res=>setProducts(res))
+    .then(res=>{
+        categoryId?
+            setProducts(res.filter((item)=> item.categoria === categoryId))
+        :
+        setProducts(res)
+        })
     .catch(err=>console.log(err))
     .finally(()=>setLoading(false))
 
-}, []);
+}, [categoryId]);
 
 
 

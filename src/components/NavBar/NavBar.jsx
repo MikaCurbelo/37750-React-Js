@@ -1,17 +1,22 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import './NavBar.css'
 import CartWidget from './CartWidget'
 import { GiMusicalNotes } from "react-icons/gi";
+import { Link } from "react-router-dom"
+
 
 
 
 export const NavBar = () => {
   return (
     <div>
-      <span className="logo fontColorNav backNav icono">
+      <span className="fontColorNav backNav icono">
+        <Link to={"/"} className="logo backNav">
         <GiMusicalNotes/>
-       <h1>CLASES DE MÚSICA</h1>
-       <GiMusicalNotes/>
+          <h1>CLASES DE MÚSICA</h1>
+        <GiMusicalNotes/>
+        </Link>
       </span>
     <nav className="navbar navbar-expand-lg navbar-light backNav">
   <div className="container-fluid">
@@ -20,17 +25,11 @@ export const NavBar = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarText">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Galería</a>
-        </li>
         <select className='backNav borde'>
           <option selected value="Cursos">Cursos</option>
-          <option value="Piano">Piano</option>
-          <option  value="Bateria">Bateria</option>
-          <option value="Guitarra">Guitarra</option>
+          <option value="Piano"><Link to={"categoria/teclados"}>Piano</Link></option>
+          <option  value="Bateria"><Link to={"categoria/percusion"}>Bateria</Link></option>
+          <option value="Guitarra"><Link to={"categoria/cuerdas"}>Guitarra</Link></option>
         </select>
       </ul>
       <div className="espacio"><CartWidget msg= "0"/></div>

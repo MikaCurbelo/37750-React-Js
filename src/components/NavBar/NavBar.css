@@ -6,10 +6,10 @@
     font-size: larger;
     display: flex;
     justify-content:center;
-}
-.fontColorNav{
     color: #034159;
+    text-decoration: none;
 }
+
 .backNav{
     background-color: #03A678;
 }
