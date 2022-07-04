@@ -14,7 +14,7 @@ export const NavBar = () => {
     <div>
       <Navbar className="fontColorNav backNav icono">
         <Container className="fontColorNav backNav icono">
-          <Link to={"/"} className="logo backNav ">
+          <Link to={"/"} className="logo backNav">
                 <GiMusicalNotes/>
                   <h1>CLASES DE MÚSICA</h1>
                 <GiMusicalNotes/>

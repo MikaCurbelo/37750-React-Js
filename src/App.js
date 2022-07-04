@@ -10,7 +10,6 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 
-
 function App() {
 
 // const onAdd = (count)=>{
