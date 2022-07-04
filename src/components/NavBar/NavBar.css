@@ -2,10 +2,9 @@
 .logo{
     padding-top: 10px;
     font-family: 'Permanent Marker', cursive;
-    font-weight: 900;
     font-size: larger;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     color: #034159;
     text-decoration: none;
 }
@@ -13,8 +12,8 @@
 .backNav{
     background-color: #03A678;
 }
-.borde{
-    border-radius: 25px;
+.dropDown{
+    font-size: large;
 }
 .icono{
     font-size: 1.7em;

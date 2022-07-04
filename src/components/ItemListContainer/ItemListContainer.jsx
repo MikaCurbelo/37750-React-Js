@@ -26,7 +26,7 @@ useEffect(() => {
     getArray(array)
     .then(res=>{
         categoryId?
-            setProducts(res.filter((item)=> item.categoria === categoryId))
+            setProducts(res.filter((item)=> item.category === categoryId))
         :
         setProducts(res)
         })

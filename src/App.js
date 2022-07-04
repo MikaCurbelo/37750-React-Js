@@ -1,5 +1,6 @@
 // @ts-check
-import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
 import './App.css';
 import './components/NavBar/NavBar'
 import { NavBar } from './components/NavBar/NavBar';
@@ -15,11 +16,11 @@ function App() {
 // const onAdd = (count)=>{
 // alert(`Agragaste ${count} cursos al carrito`)
 // }
- 
+
 
 
   return (
-  <div>
+  
     <>
     {
       <BrowserRouter>
@@ -37,7 +38,6 @@ function App() {
       */
     }
     </>
-</div>
   );
 }
 

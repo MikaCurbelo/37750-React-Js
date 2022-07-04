@@ -4,6 +4,7 @@ import './NavBar.css'
 import CartWidget from './CartWidget'
 import { GiMusicalNotes } from "react-icons/gi";
 import { Link } from "react-router-dom"
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 
 
@@ -11,32 +12,29 @@ import { Link } from "react-router-dom"
 export const NavBar = () => {
   return (
     <div>
-      <span className="fontColorNav backNav icono">
-        <Link to={"/"} className="logo backNav">
-        <GiMusicalNotes/>
-          <h1>CLASES DE MÚSICA</h1>
-        <GiMusicalNotes/>
-        </Link>
-      </span>
-    <nav className="navbar navbar-expand-lg navbar-light backNav">
-  <div className="container-fluid">
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <select className='backNav borde'>
-          <option selected value="Cursos">Cursos</option>
-          <option value="Piano"><Link to={"categoria/teclados"}>Piano</Link></option>
-          <option  value="Bateria"><Link to={"categoria/percusion"}>Bateria</Link></option>
-          <option value="Guitarra"><Link to={"categoria/cuerdas"}>Guitarra</Link></option>
-        </select>
-      </ul>
-      <div className="espacio"><CartWidget msg= "0"/></div>
-      
-    </div>
-  </div>
-</nav>
+      <Navbar className="fontColorNav backNav icono">
+        <Container className="fontColorNav backNav icono">
+          <Link to={"/"} className="logo backNav ">
+                <GiMusicalNotes/>
+                  <h1>CLASES DE MÚSICA</h1>
+                <GiMusicalNotes/>
+          </Link> 
+          <div>
+            {/* <Navbar.Toggle/> */}
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="dropDown">
+                <NavDropdown title="Cursos" id="basic-nav-dropdown">
+                  <NavDropdown.Item value="Piano"><Link to={"category/teclados"}>Piano</Link></NavDropdown.Item>
+                  <NavDropdown.Item value="Batería"><Link to={"category/percusion"}>Batería</Link></NavDropdown.Item>
+                  <NavDropdown.Item value="Guitarra"><Link to={"category/cuerdas"}>Guitarra</Link></NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            </Navbar.Collapse>
+          </div>
+        </Container>
+      </Navbar>
+      <div className="espacio backNav"><CartWidget msg= "0"/></div>
+
     </div>
   )
 }
