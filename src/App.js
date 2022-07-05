@@ -1,21 +1,14 @@
 // @ts-check
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from 'react';
 import './App.css';
 import './components/NavBar/NavBar'
 import { NavBar } from './components/NavBar/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
-// import {ItemCount} from './components/ItemCount/ItemCount';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 
 function App() {
-
-// const onAdd = (count)=>{
-// alert(`Agragaste ${count} cursos al carrito`)
-// }
-
 
 
   return (
@@ -31,10 +24,7 @@ function App() {
 
 
         </Routes>
-      </BrowserRouter>
-       /*
-      <ItemCount stock={5} initial={1} onAdd={onAdd}></ItemCount>
-      */
+     </BrowserRouter>
     }
     </>
   );
