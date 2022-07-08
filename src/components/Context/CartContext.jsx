@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { createContext } from 'react'
-import { Item } from './ItemListContainer/Item';
+import { Item } from '../ItemListContainer/Item';
 
 
 export const myContext = createContext(null);
