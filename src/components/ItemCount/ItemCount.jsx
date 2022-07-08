@@ -2,6 +2,7 @@
 import React from 'react'
 import { useState } from 'react'
 import './ItemCount.scss'
+import { Link } from 'react-router-dom';
 
 export const ItemCount = ({ stock, initial, onAdd}) =>  {
 const [count, setCount]= useState(initial);
@@ -22,6 +23,7 @@ const quitar = ()=>{
           <button onClick={agregar} disabled={count >= stock}>+</button>
       </div>
           <button onClick={ () => onAdd(count)}>Agregar al carrito</button>
+          <Link to="/Cart"><button>Terminar compra</button></Link>
       
     </div>
   )

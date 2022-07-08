@@ -39,4 +39,5 @@ export const array = [
         descripcion: "Curso de Violonchelo para nivel básico, intermedio y avanzado",
         imgUrl: "../img/violonchelo.webp",
         category: "cuerdas"}
-]
+];
+
