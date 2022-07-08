@@ -4,10 +4,9 @@
     font-family: 'Permanent Marker', cursive;
     font-size: larger;
     display: flex;
-    justify-content: center;
     color: #034159;
     text-decoration: none;
-    align-content: center;
+
 }
 .links{
     text-decoration: none;

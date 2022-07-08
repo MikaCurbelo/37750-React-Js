@@ -1,10 +1,16 @@
 import React from 'react'
 import {ItemCount} from '../ItemCount/ItemCount';
+import swal from 'sweetalert'
 
 
 export const ItemDetail = ({nombre, precio, descripcion, imgUrl}) => {
   const onAdd = (count)=>{
-    alert(`Agragaste ${count} cursos de ${nombre} al carrito`)
+    swal({
+      title: "Felicidades!",
+      text: `Agregaste ${count} cursos de ${nombre} al carrito`,
+      icon: "success",
+      button: "Terminar compra",
+    });
     }   
 
   return (
