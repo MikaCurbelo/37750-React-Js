@@ -1,28 +1,34 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import {ItemCount} from '../ItemCount/ItemCount';
 import swal from 'sweetalert'
 import '../ItemCount/ItemCount.scss'
 import { CartContext } from '../Context/CartContext';
+import { Link } from 'react-router-dom'
 
 
 
 
-export const ItemDetail = ({nombre, precio, descripcion, imgUrl}) => {
-  const cartContext = useContext(CartContext)
+export const ItemDetail = ({nombre, precio, descripcion, imgUrl, stock}) => {
+  const [button, setButton] = useState(false);
+
+  const cartContext = useContext(CartContext);
   const {cart, addToCart} = cartContext;
 
 
 
   const onAdd = (count)=>{
 
-    addToCart(nombre, count);
+    setButton(true)
+/*  addToCart(nombre, count); */
 
     swal({
       title: "Hecho",
       text: 'Agregaste '+count + ' clases de ' + nombre + ' al carrito',
       icon: "success",
     });
+    
+   
     }   
 
   
@@ -36,7 +42,12 @@ export const ItemDetail = ({nombre, precio, descripcion, imgUrl}) => {
             <h2>{descripcion}</h2>
             <h3>Precio ${precio}</h3>
         </div>
-      <ItemCount stock={5} initial={1} onAdd={onAdd}></ItemCount>
+        
+     {button? 
+     <Link to="/Cart"><button>Terminar compra</button></Link>
+     :
+     <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
+    }
       
     </div>
   )
