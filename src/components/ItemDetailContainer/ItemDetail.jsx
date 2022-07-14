@@ -3,33 +3,30 @@ import React, { useContext, useState } from 'react'
 import {ItemCount} from '../ItemCount/ItemCount';
 import swal from 'sweetalert'
 import '../ItemCount/ItemCount.scss'
-import { CartContext } from '../Context/CartContext';
+import { myContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom'
 
 
 
 
-export const ItemDetail = ({nombre, precio, descripcion, imgUrl, stock}) => {
+export const ItemDetail = ({id, nombre, precio, descripcion, imgUrl, stock}) => {
   const [button, setButton] = useState(false);
 
-  const cartContext = useContext(CartContext);
-  const {cart, addToCart} = cartContext;
+  const {addToCart} = useContext(myContext);
+  const product = {id, nombre, precio, descripcion, imgUrl}
 
 
 
   const onAdd = (count)=>{
-
-    setButton(true)
-/*  addToCart(nombre, count); */
+  setButton(true)
+  addToCart(product, count);
 
     swal({
       title: "Hecho",
       text: 'Agregaste '+count + ' clases de ' + nombre + ' al carrito',
       icon: "success",
     });
-    
-   
-    }   
+  }   
 
   
   return (

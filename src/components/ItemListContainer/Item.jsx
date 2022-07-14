@@ -1,15 +1,10 @@
-import React, {useContext} from 'react'
-import {CartContext} from '../Context/CartContext.jsx' 
+import React from 'react'
 import { Card, Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 
 export const Item = ({id, nombre, precio, descripcion, imgUrl}) => {
 
-const cartContext = useContext(CartContext)
-const {cart, addToCart} = cartContext;
-
-console.log(addToCart);
 
   return (
     <Card style={{ width: '18rem' }} id='item'>
