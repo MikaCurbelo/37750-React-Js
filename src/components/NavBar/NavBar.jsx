@@ -33,7 +33,7 @@ export const NavBar = () => {
           </div>
         </Container>
       </Navbar>
-      <div className="espacio backNav"><CartWidget msg= "0"/></div>
+      <div className="espacio backNav"><CartWidget/></div>
 
     </div>
   )

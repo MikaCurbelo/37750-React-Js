@@ -1,22 +1,27 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useContext } from 'react'
 import {ItemCount} from '../ItemCount/ItemCount';
 import swal from 'sweetalert'
 import '../ItemCount/ItemCount.scss'
+import { CartContext } from '../Context/CartContext';
 
 
 
 
 export const ItemDetail = ({nombre, precio, descripcion, imgUrl}) => {
-  const Cart = []
+  const cartContext = useContext(CartContext)
+  const {cart, addToCart} = cartContext;
+
+
 
   const onAdd = (count)=>{
+
+    addToCart(nombre, count);
+
     swal({
-      title: "Felicidades!",
-      text: `Agregaste ${count} cursos de ${nombre} al carrito 
-      Ahora clickea en Terminar compra`,
+      title: "Hecho",
+      text: 'Agregaste '+count + ' clases de ' + nombre + ' al carrito',
       icon: "success",
-      button: "Ok",
     });
     }   
 

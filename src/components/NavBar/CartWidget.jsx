@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaOpencart } from "react-icons/fa";
+import { CartContext } from "../Context/CartContext";
 import "./CartWidget.css";
 
 
 
 
-export default function CartWidget({msg}) {
+export default function CartWidget() {
+
+const cartContext = useContext(CartContext);
+const { cart } = cartContext; 
+
+
+
     return(
         <div className="espacio">
         <FaOpencart/>
-         {msg}
+        {cart.length}
         </div>
     );
 }
