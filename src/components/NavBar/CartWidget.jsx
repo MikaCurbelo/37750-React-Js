@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React,  { useContext } from "react";
 import { FaOpencart } from "react-icons/fa";
 import { myContext } from "../Context/CartContext";
 import "./CartWidget.css";
@@ -8,15 +8,14 @@ import "./CartWidget.css";
 
 export default function CartWidget() {
 
-const cartContext = useContext(myContext);
-const { cart } = cartContext; 
+const { Cart } = useContext(myContext); 
 
 
 
     return(
         <div className="espacio">
-        <FaOpencart/>
-        {cart.length}
+        <FaOpencart/>        
+        {Cart.length}
         </div>
     );
 }
