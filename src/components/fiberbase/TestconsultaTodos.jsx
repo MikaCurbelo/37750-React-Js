@@ -1,17 +1,18 @@
 import React, { useState, useEffect} from 'react'
-import {collection, getDocs, getFirestone} from 'firebase/firestone' 
+import {collection, getDocs, getFirestore} from 'firebase/firestore' 
 
 export default function TestConsulta() {
 const [items, setItems] = useState([])
 useEffect(() => {
-  const db = getFirestone();
+  const db = getFirestore();
   const coleccionEntera = collection(db, 'Item');
+
   getDocs(coleccionEntera).then((res)=>{
+
     console.log(res.docs);
-    const auxArray = res.docs.map(item => ({...item.data(), id: item.id}));
-    setItems(auxArray);
-    // console.log(auxArray);
-    // setItem({...res.data(), id: res.id});
+
+    setItems(res.docs.map(items=>({id: items.id, ...items.data() })));
+   
   });
 }, []);
 

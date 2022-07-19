@@ -1,14 +1,19 @@
 import React, { useState, useEffect} from 'react'
-import {doc, getDoc, getFirestone} from 'firebase/firestone' 
+import {doc, getDoc, getFirestore} from 'firebase/firestore' 
+
+
 
 export default function TestConsulta() {
 const [item, setItem] = useState({})
 useEffect(() => {
-  const db = getFirestone();
-  const bateria = doc(db,'Item', 'CPLk0APksPsjripZcGVD');
+  const db = getFirestore();
+  const bateria = doc(db, 'Item', 'CPLk0APksPsjripZcGVD');
   getDoc(bateria).then((res)=>{
+
     setItem({...res.data(), id: res.id});
+
   });
+
 }, []);
 
 

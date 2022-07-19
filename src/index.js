@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import { initializeApp } from "firebase/app";
+
 const firebaseConfig = {
   apiKey: "AIzaSyBmovgZ13LX0N3dRluOlD8KFqddF9kGZ9g",
   authDomain: "proyecto-reactjs-37750.firebaseapp.com",
@@ -13,6 +13,7 @@ const firebaseConfig = {
   messagingSenderId: "197113808581",
   appId: "1:197113808581:web:f95b51db717334c89c92ac"
 };
+
 initializeApp(firebaseConfig);
 
 
