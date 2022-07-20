@@ -7,7 +7,7 @@ export default function TestConsulta() {
 const [item, setItem] = useState({})
 useEffect(() => {
   const db = getFirestore();
-  const bateria = doc(db, 'Item', 'CPLk0APksPsjripZcGVD');
+  const bateria = doc(db, 'items', '3gqvG4XBCDafpeKemR4v');
   getDoc(bateria).then((res)=>{
 
     setItem({...res.data(), id: res.id});
@@ -20,5 +20,6 @@ useEffect(() => {
 
   return (
     <div>{item && <>{JSON.stringify(item)}</>}</div>
+    
   )
 }

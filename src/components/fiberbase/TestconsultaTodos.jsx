@@ -5,7 +5,7 @@ export default function TestConsulta() {
 const [items, setItems] = useState([])
 useEffect(() => {
   const db = getFirestore();
-  const coleccionEntera = collection(db, 'Item');
+  const coleccionEntera = collection(db, 'items');
 
   getDocs(coleccionEntera).then((res)=>{
 
