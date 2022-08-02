@@ -12,30 +12,28 @@ const cartStart = [];
  
 export default function CartContext({ children }) {
     
-    const [Cart, setCart] = useState(cartStart);
+    const [cart, setCart] = useState(cartStart);
 
     useEffect(() => {
-      console.log(Cart)
-    }, [Cart])
+      
+    }, [cart])
     
 
     const addToCart = (Item, count) => {
-        console.log(Item.id)
         if(isInCart(Item.id)){
 
-            const productoAgregado = Cart.map((prod)=>prod.id === Item.id? {...prod, cantidad:prod.count + count} : prod)
+            const productoAgregado = cart.map((prod)=>prod.id === Item.id? {...prod, cantidad:prod.cantidad + count} : prod)
             setCart([...productoAgregado])
         }else{
-            setCart([...Cart, {...Item, "cantidad": count}])
-            alert("Se agregaron " + JSON.stringify(count)+ " " + JSON.stringify(Item.nombre))
+            setCart([...cart, {...Item, "cantidad": count}])
         }
      
     };
     const isInCart = (id) => {
-        return Cart.some( (prod) => prod.id === id)
+        return cart.some( (prod) => prod.id === id)
     };
     const removeToCart = () => { 
-        const newCart = Cart.filter((prod) => prod.id !== Item.id)
+        const newCart = cart.filter((prod) => prod.id !== Item.id)
         setCart(newCart)
     };
     const clearCart = () => {
@@ -43,7 +41,7 @@ export default function CartContext({ children }) {
     }
   return <><myContext.Provider 
         value={{
-                Cart, 
+                cart, 
                 addToCart, 
                 isInCart, 
                 removeToCart, 

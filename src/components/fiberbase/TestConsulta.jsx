@@ -7,10 +7,10 @@ export default function TestConsulta() {
 const [item, setItem] = useState({})
 useEffect(() => {
   const db = getFirestore();
-  const bateria = doc(db, 'items', '3gqvG4XBCDafpeKemR4v');
+  const bateria = doc(db, 'items', 'itemId');
   getDoc(bateria).then((res)=>{
 
-    setItem({...res.data(), id: res.id});
+    setItem({...res.data('nombre'), id: res.id});
 
   });
 

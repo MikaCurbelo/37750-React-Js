@@ -8,14 +8,14 @@ import "./CartWidget.css";
 
 export default function CartWidget() {
 
-const { Cart } = useContext(myContext); 
+const { cart } = useContext(myContext); 
 
 
 
     return(
         <div className="espacio">
         <FaOpencart/>        
-        {Cart.length}
+        {cart.length}
         </div>
     );
 }

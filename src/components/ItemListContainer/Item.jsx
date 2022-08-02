@@ -13,7 +13,7 @@ export const Item = ({id, nombre, precio, descripcion, imgUrl}) => {
         <Card.Title>{nombre}</Card.Title>
         <Card.Title>Precio: ${precio} por mes (cuatro clases)</Card.Title>
           <Card.Text>{descripcion}</Card.Text>
-        <Button variant="primary"><Link to={`/item/${id}`} className="linkbtn">Ver Curso</Link></Button>
+          <Link to={`/item/${id}`} className="linkbtn"><Button variant="primary">Ver Curso</Button></Link>
       </Card.Body>
 </Card>
   )

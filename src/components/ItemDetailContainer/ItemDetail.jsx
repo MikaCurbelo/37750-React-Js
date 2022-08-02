@@ -2,10 +2,10 @@
 import React, { useContext, useState } from 'react'
 import {ItemCount} from '../ItemCount/ItemCount';
 import swal from 'sweetalert'
+import './ItemDetailContainer.scss'
 import '../ItemCount/ItemCount.scss'
 import { myContext } from '../Context/CartContext';
 import { Link } from 'react-router-dom'
-
 
 
 
@@ -30,23 +30,25 @@ export const ItemDetail = ({id, nombre, precio, descripcion, imgUrl, stock}) => 
 
   
   return (
-    <div id='itemDetail'>
+   
+  <div id='itemDetail'>
         <div>
-<img id='img' src={imgUrl} alt="bateria" />
+          <img id='img' src={imgUrl} alt="bateria" />
         </div>
         <div id='data'>
             <h1>{nombre}</h1>
             <h2>{descripcion}</h2>
             <h3>Precio ${precio}</h3>
         </div>
-        
+  
+    <div>    
      {button? 
      <Link to="/Cart"><button>Terminar compra</button></Link>
      :
      <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
     }
-      
     </div>
+  </div>
   )
 }
  
